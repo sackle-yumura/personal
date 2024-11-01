@@ -53,6 +53,14 @@ services:
       - public:/app/public
     links:
       - db
+  openapi:
+    container_name: 'kintai_doc'
+    image: swaggerapi/swagger-ui
+    volumes:
+      - ./docs:/app
+    # command: npm run build
+    ports:
+      - 8080:8080
 volumes:
   mysql_data:
   bundle:

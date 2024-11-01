@@ -1,0 +1,38 @@
+openapi: 3.1.0
+info:
+  title: Swagger サンプル - OpenAPI 3.0
+  description: >-
+    ## Swaggerのサンプルプロジェクトです。
+  termsOfService: http://swagger.io/terms/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+servers:
+  - url: https://sample.swagger.io/api/
+tags:
+  - name: user
+    description: アプリの利用ユーザー
+paths:
+  /users:
+    $ref: "paths/users/index.yml"
+components:
+  schemas:
+    User:
+      $ref: "schemas/user.yml"
+  securitySchemes:
+    MobileApp:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://example.com
+          scopes:
+            write:attendance: 出退勤・欠勤を記録します
+    WebApp:
+      type: oauth2
+      flows:
+        password:
+          tokenUrl: https://example.com
+          scopes:
+            read: 書き込み権限
+            write: 読み出し権限
