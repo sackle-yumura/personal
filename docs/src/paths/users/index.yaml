@@ -1,0 +1,57 @@
+get:
+  tags:
+    - users
+  summary: ユーザー一覧
+  description: ユーザーの一覧です
+  operationId: users
+  parameters:
+    - name: status
+      in: query
+      description: 状態（在職/休職/退職）
+      required: false
+      explode: false
+      schema:
+        type: string
+        default: available
+        enum:
+          - employee
+          - retire
+          - leave
+    - name: name
+      in: query
+      description: ユーザー名（部分一致）
+      required: false
+      explode: false
+      schema:
+        type: string
+    - name: department
+      in: query
+      description: 部署
+      required: false
+      explode: false
+      schema:
+        type: array
+        enum:
+          - develop
+          - design
+          - sales
+          - qa
+          - general
+  responses:
+    "200":
+      description: Successful operation
+      content:
+        application/json:
+          array:
+            schema:
+              $ref: "../../openapi.yml#/components/schemas/User"
+    "400":
+      description: Invalid ID supplied
+    "404":
+      description: Pet not found
+    "405":
+      description: Validation exception
+  security:
+    - petstore_auth:
+        - write:pets
+        - read:pets

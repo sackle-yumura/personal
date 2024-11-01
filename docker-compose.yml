@@ -58,7 +58,8 @@ services:
     image: swaggerapi/swagger-ui
     volumes:
       - ./docs:/app
-    # command: npm run build
+    environment:
+      SWAGGER_JSON: /app/openapi.yaml
     ports:
       - 8080:8080
 volumes:

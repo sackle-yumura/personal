@@ -9,17 +9,17 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   version: 1.0.11
 servers:
-  - url: https://sample.swagger.io/api/
+  - url: localhost:8080
 tags:
   - name: user
     description: アプリの利用ユーザー
 paths:
   /users:
-    $ref: "paths/users/index.yml"
+    $ref: "src/paths/users/index.yaml"
 components:
   schemas:
     User:
-      $ref: "schemas/user.yml"
+      $ref: "src/schemas/user.yml"
   securitySchemes:
     MobileApp:
       type: oauth2
