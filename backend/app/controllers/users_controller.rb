@@ -6,6 +6,6 @@ class UsersController < ApplicationController
 
   private
   def search_query
-    params.require(:q).permit(:status_eq, :screen_name_cont, :department_id_eq, :office_id_eq)
+    params.permit(:status_eq, :screen_name_cont, :department_id_eq, :office_id_eq)
   end
 end

@@ -47,6 +47,8 @@ group :development, :test do
 
   gem "bullet"
   gem "pry-byebug"
+
+  gem 'committee-rails'
 end
 
 

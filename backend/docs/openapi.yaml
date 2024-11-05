@@ -15,11 +15,11 @@ tags:
     description: アプリの利用ユーザー
 paths:
   /users:
-    $ref: "src/paths/users/index.yaml"
+    $ref: "./src/paths/users/index.yaml#/paths/~1users"
 components:
   schemas:
-    User:
-      $ref: "src/schemas/user.yaml"
+    user:
+      $ref: "./src/schemas/user.yaml#/components/schemas/user"
   securitySchemes:
     MobileApp:
       type: oauth2
