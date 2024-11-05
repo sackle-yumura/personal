@@ -1,0 +1,11 @@
+required:
+  - department_name
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    example: 10
+  department_name:
+    type: string
+    example: エンジニア

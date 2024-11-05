@@ -42,9 +42,9 @@ get:
       description: Successful operation
       content:
         application/json:
-          array:
-            schema:
-              $ref: "../../openapi.yml#/components/schemas/User"
+          schema:
+            type: string
+            $ref: "../../../src/schemas/user.yaml"
     "400":
       description: Invalid ID supplied
     "404":

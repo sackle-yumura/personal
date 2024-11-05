@@ -1,0 +1,28 @@
+required:
+  - name
+  - photoUrls
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    example: 10
+  screen_name:
+    type: string
+    example: テスト太郎
+  email:
+    type: string
+    example: mail@example.com
+  office:
+    type: object
+    $ref: "./office.yaml"
+  department:
+    type: object
+    $ref: "./department.yaml"
+  status:
+    type: integer
+    description: pet status in the store
+    enum:
+      - 1
+      - 2
+      - 3
