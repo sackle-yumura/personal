@@ -36,6 +36,9 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: '3.1.6'
+      # Bundle install
+      - name: Bundle install
+        run: bundle install
       # Add or replace database setup steps here
       - name: Set up database schema
         run: bin/rails db:migrate
