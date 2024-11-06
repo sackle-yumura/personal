@@ -27,6 +27,10 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: "mysql://root:password@localhost:3306/kintai_test"
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_HOST: "mysql://root:password@localhost:3306/kintai_test"
+      DB_DATABASE: kintai_test
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
