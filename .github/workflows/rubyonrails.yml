@@ -47,6 +47,8 @@ jobs:
       - name: Start MySQL
         run: sudo /etc/init.d/mysql start
       - name: Set up database schema
+        run: bin/rails db:create
+      - name: Set up database schema
         run: bin/rails db:migrate
       # Add or replace test runners here
       - name: Run tests
