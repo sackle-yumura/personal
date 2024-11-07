@@ -19,18 +19,17 @@ jobs:
     services:
       mysql:
         image: mysql:9
-        ports:
-          - "3306:3306"
+        env:
+          MYSQL_DATABASE: kintai_test
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_ROOT_HOST: '%'
+          TZ: "Asia/Tokyo"
     env:
       RAILS_ENV: test
       DB_USER: root
       DB_PASSWORD: password
       DB_HOST: localhost
       DB_DATABASE: kintai_test
-      MYSQL_DATABASE: kintai_test
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_ROOT_HOST: '%'
-      TZ: "Asia/Tokyo"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
