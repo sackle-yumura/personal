@@ -30,7 +30,7 @@ jobs:
       RAILS_ENV: test
       DB_USER: root
       DB_PASSWORD: password
-      DB_HOST: 127.0.0.1
+      DB_HOST: localhost
       DB_DATABASE: kintai_test
     steps:
       - name: Checkout code
