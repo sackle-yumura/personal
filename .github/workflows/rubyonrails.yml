@@ -28,7 +28,7 @@ jobs:
           TZ: "Asia/Tokyo"
     env:
       RAILS_ENV: test
-      DB_USER: hoge
+      DB_USER: root
       DB_PASSWORD: password
       DB_HOST: localhost
       DB_DATABASE: kintai_test
