@@ -24,6 +24,7 @@ jobs:
         env:
           MYSQL_DATABASE: kintai_test
           MYSQL_ROOT_PASSWORD: password
+          MYSQL_ROOT_HOST: '%'
           TZ: "Asia/Tokyo"
     env:
       RAILS_ENV: test
