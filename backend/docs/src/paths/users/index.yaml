@@ -44,9 +44,9 @@ paths:
           description: Successful operation
           content:
             application/json:
-              type: array
-              items:
-                schema:
+              schema:
+                type: array
+                items:
                   $ref: "../../../src/schemas/user.yaml#/components/schemas/user"
         "400":
           description: Invalid ID supplied
