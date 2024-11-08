@@ -7,11 +7,6 @@ on:
     paths:
       - backend/docs/**/*
       - .github/workflows/deploy-to-github-pages.yml
-
-defaults:
-  run:
-    working-directory: backend
-
 jobs:
   deploy-to-github-pages:
     runs-on: ubuntu-latest
@@ -24,17 +19,15 @@ jobs:
 
       - name: Validate Swagger Files
         run: |
-          swagger-cli validate -d docs/openapi.yaml --type yaml
-      - name: debug
-        run: ls docs/
+          swagger-cli validate -d backend/docs/openapi.yaml --type yaml
       - name: Generate Swagger UI
         uses: Legion2/swagger-ui-action@v1.3
         with:
-          output: docs
-          spec-file: docs/openapi.yaml
+          output: backend/docs
+          spec-file: backend/docs/openapi.yaml
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs
+          publish_dir: backend/docs
