@@ -26,7 +26,7 @@ jobs:
         run: |
           swagger-cli validate -d docs/openapi.yaml --type yaml
       - name: debug
-        run: ls
+        run: ls docs/
       - name: Generate Swagger UI
         uses: Legion2/swagger-ui-action@v1
         with:
