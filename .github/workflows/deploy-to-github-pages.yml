@@ -31,6 +31,8 @@ jobs:
           output: swagger-ui
           spec-file: openapi.yaml
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: debug
+        run: ls
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
