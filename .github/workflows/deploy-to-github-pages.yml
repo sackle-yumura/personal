@@ -8,12 +8,13 @@ on:
       - backend/docs/**/*
       - .github/workflows/deploy-to-github-pages.yml
 
+defaults:
+  run:
+    working-directory: backend/docs
+
 jobs:
   deploy-to-github-pages:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: backend/docs
     steps:
       - uses: actions/checkout@v2
 
