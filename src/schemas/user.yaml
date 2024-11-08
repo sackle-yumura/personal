@@ -1,0 +1,31 @@
+components:
+  schemas:
+    user:
+      required:
+        - screen_name
+        - email
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+        screen_name:
+          type: string
+          example: テスト太郎
+        email:
+          type: string
+          example: mail@example.com
+        office:
+          type: object
+          $ref: "./office.yaml#/components/schemas/office"
+        department:
+          type: object
+          $ref: "./department.yaml#/components/schemas/department"
+        status:
+          type: integer
+          description: pet status in the store
+          enum:
+            - 1
+            - 2
+            - 3
