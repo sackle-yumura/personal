@@ -21,7 +21,7 @@ jobs:
         run: |
           swagger-cli validate -d backend/docs/openapi.yaml --type yaml
       - name: Generate Swagger UI
-        uses: Legion2/swagger-ui-action@v1.3
+        uses: Legion2/swagger-ui-action@v1
         with:
           output: backend/docs
           spec-file: backend/docs/openapi.yaml
