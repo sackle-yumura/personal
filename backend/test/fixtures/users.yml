@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  screen_name: MyString
+  department_id: 1
+  status: 1
+  email: "mail1@example.com"
+  encrypted_password: "password"
+
+two:
+  screen_name: MyString
+  department_id: 1
+  status: 1
+  email: "mail2@example.com"
+  encrypted_password: "password"
