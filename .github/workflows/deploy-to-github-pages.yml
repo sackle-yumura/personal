@@ -28,7 +28,7 @@ jobs:
       - name: debug
         run: ls docs/
       - name: Generate Swagger UI
-        uses: Legion2/swagger-ui-action@v1
+        uses: Legion2/swagger-ui-action@v1.3
         with:
           output: docs
           spec-file: docs/openapi.yaml
