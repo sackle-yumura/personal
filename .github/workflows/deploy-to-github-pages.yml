@@ -18,7 +18,7 @@ jobs:
           npm install -g swagger-cli swagger-parser yamljs
 
       - name: Generate Swagger Files
-        run: node main.js
+        run: node backend/docs/main.js
       - name: Validate Swagger Files
         run: |
           swagger-cli validate -d backend/docs/openapi.yaml --type yaml
