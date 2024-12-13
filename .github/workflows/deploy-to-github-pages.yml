@@ -13,10 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install swagger-cli
+      - name: Install packages
         run: |
-          npm install -g swagger-cli
+          npm install -g swagger-cli swagger-parser yamljs
 
+      - name: Generate Swagger Files
+        run: node main.js
       - name: Validate Swagger Files
         run: |
           swagger-cli validate -d backend/docs/openapi.yaml --type yaml
